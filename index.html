@@ -1,11 +1,11 @@
 <html>
     <head>
         <style>
-            #cabecera {
+            #seccion1 {
                 font-size: 70px;
                 text-align: center;
                 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,86,110,1) 30%, rgba(0,212,255,1) 100%);            }
-            #seccion1{
+            #proyectos{
                 display: grid;
                 grid-template-columns: auto auto auto;
                 text-align: center;
@@ -20,12 +20,11 @@
         </style>
         
         <body>
-
             <section>
-                <h1 id="cabecera">Bienvenido</h1>
+                <h1 id="seccion1">Bienvenido</h1>
             </section>
 
-            <section id="seccion1">
+            <section id="proyectos">
                 <div class="imge">
                     <p class="subtitulo">Palmeras</p>
                     <img src="img/palemera.webp">
@@ -60,22 +59,28 @@
             }
         ]
            
-            let seccion = document.querySelector('#seccion1')
-            seccion.style.background = 'grey'; 
-
-            function dinamico(src,desc){
-                let div = document.createElement('div');
-                let img = document.createElement('img');
+            let proyectos = document.querySelector('#proyectos')
+            proyectos.style.background = 'blue'; 
+         
+            function dinamico (src, desc){
+                let div = document.createElement("div");
+                let img = document.createElement("img");
                 img.src = src;
-                let p = document.createElement('p');
+                let p = document.createElement("p");
                 p.innerHTML = desc;
                 div.appendChild(img);
                 div.appendChild(p);
-                secion1.appendChild(div);
-            }
+                proyectos.appendChild(div)
 
-            datos.forEach(({img, src}) => dinamico(img,src));
-            
+            } 
+
+            datos.forEach(
+                (
+                    {img, src}
+                    ) => dinamico(img,src));
+
+
+
         </script>
     </head>
 </html>
