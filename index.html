@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+            #cabecera {
+                font-size: 70px;
+                text-align: center;
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,86,110,1) 30%, rgba(0,212,255,1) 100%);            }
+            #seccion1{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                text-align: center;
+            }
+            .imge img{
+                width: 70%;
+            }
+            .subtitulo{
+                font-size: 23px;
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(219,219,165,1) 0%, rgba(0,212,255,1) 53%);                 
+            }        
+        </style>
+        
+        <body>
+
+            <section>
+                <h1 id="cabecera">Bienvenido</h1>
+            </section>
+
+            <section id="seccion1">
+                <div class="imge">
+                    <p class="subtitulo">Palmeras</p>
+                    <img src="img/palemera.webp">
+                </div>
+               
+                <div class="imge">
+                    <p class="subtitulo">Costa</p>
+                    <img src="img/costa.webp">
+                </div>
+                
+                <div class="imge">
+                    <p class="subtitulo">Cuidad</p>
+                    <img src="img/cuidad.webp">
+                </div>
+                
+            </section>
+            
+        </body>
+        <script>
+            const datos = [
+            {
+                img: 'img/palemera.webp',
+                desc: 'Palmera'
+            },
+            {
+                img: 'img/costa.webp',
+                desc: 'Costa'
+            },
+            {
+                img: 'img/cuidad.webp',
+                desc: 'Cuidad'
+            }
+        ]
+           
+            let seccion = document.querySelector('#seccion1')
+            seccion.style.background = 'white'; 
+
+            function dinamico(src,desc){
+                let div = document.createElement('div');
+                let img = document.createElement('img');
+                img.src= src;
+                let p = document.createElement('p');
+                p.innerHTML = desc;
+                div.appendChild(img);
+                div.appendChild(p);
+                seccion1
+            }
+
+            datos.forEach(({img, src}) => dinamico(img,src));
+            
+        </script>
+    </head>
+</html>
